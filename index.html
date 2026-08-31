@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#07111f" />
+    <meta name="description" content="Playloop Studio secure connection check." />
+    <title>Security Check | Playloop Studio</title>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0];
+        var j = d.createElement(s);
+        var dl = l !== "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TR7QDQDP");
+    </script>
+    <!-- End Google Tag Manager -->
+    <link rel="stylesheet" href="./styles.css?v=verification-1" />
+    <script charset="UTF-8" src="./assets/sensorsdata.js" defer></script>
+    <script src="./app.js?v=verification-1" defer></script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TR7QDQDP"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+        title="Google Tag Manager"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Playloop Studio home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" role="img">
+            <path d="M12 9.5a12.5 12.5 0 1 1-2.9 17.8" />
+            <path d="m8.8 20 1.1-10.8 9.6 4.9" />
+            <path d="m17 15.5 9 4.5-9 4.5z" class="play" />
+          </svg>
+        </span>
+        <span>PLAYLOOP <strong>STUDIO</strong></span>
+      </a>
+    </header>
+
+    <main>
+      <section class="verification-card" aria-labelledby="status-title">
+        <div class="shield-wrap" id="shield" aria-hidden="true">
+          <svg class="shield" viewBox="0 0 128 144" role="img">
+            <path class="shield-body" d="M64 5 116 24v41c0 35-20.8 59-52 73C32.8 124 12 100 12 65V24z" />
+            <path class="shield-edge" d="M64 17 105 32v33c0 28.4-15.8 48.3-41 60.5C38.8 113.3 23 93.4 23 65V32z" />
+            <path class="check" d="m42 70 14 14 31-34" />
+          </svg>
+          <span class="scan-line"></span>
+        </div>
+
+        <div class="status-pill" id="status-pill">
+          <span class="status-dot"></span>
+          <span id="status-label">Checking connection</span>
+        </div>
+
+        <h1 id="status-title">Checking your connection</h1>
+        <p class="description" id="status-description">
+          Please wait while we verify your connection.
+        </p>
+
+        <div
+          class="progress"
+          id="progress"
+          role="progressbar"
+          aria-label="Connection verification progress"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <span></span>
+        </div>
+
+        <a
+          class="continue-button"
+          id="continue-button"
+          href="#"
+          data-track-link
+          data-track-position="security_continue"
+          hidden
+        >
+          <span>Continue</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="m7.5 4.5 5.5 5.5-5.5 5.5" />
+          </svg>
+        </a>
+
+        <p class="privacy-note">
+          <svg viewBox="0 0 18 18" aria-hidden="true">
+            <rect x="3.5" y="7.5" width="11" height="8" rx="2" />
+            <path d="M6 7.5V5.7a3 3 0 0 1 6 0v1.8" />
+          </svg>
+          Protecting your network.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Playloop Studio. All rights reserved.</p>
+    </footer>
+
+    <noscript><div class="noscript">JavaScript is required to continue.</div></noscript>
+  </body>
+</html>
