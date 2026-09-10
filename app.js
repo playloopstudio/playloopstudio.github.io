@@ -4,7 +4,6 @@
   var sensors = window.sensorsDataAnalytic201505;
   var CONFIG = {
     sensorsServerUrl: "https://collect.analyse.lnearn.com/sa?project=production",
-    defaultPath: "/sports",
     campaign: "playloopstudio",
   };
   var pageTraceId = getTraceId();
@@ -158,11 +157,6 @@
     syncTrackedHref(target);
   }
 
-  function applyDefaultSearchParams(targetUrl) {
-    if (!targetUrl.searchParams.has("p")) targetUrl.searchParams.set("p", CONFIG.defaultPath);
-    if (!targetUrl.searchParams.has("worldcup")) targetUrl.searchParams.set("worldcup", "1");
-  }
-
   function copyCurrentQueryParams(targetUrl) {
     var currentUrl = new URL(window.location.href);
     currentUrl.searchParams.forEach(function (value, key) {
@@ -210,7 +204,6 @@
 
     targetUrl.pathname = "/domain-v2/entrance2";
     copyCurrentQueryParams(targetUrl);
-    applyDefaultSearchParams(targetUrl);
 
     sasdkValue = getSensorsCrossDomainValue() || targetUrl.searchParams.get("_sasdk") || "";
     if (sasdkValue) targetUrl.searchParams.set("_sasdk", sasdkValue);
