@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#07111f" />
-    <meta name="description" content="Playloop Studio secure connection check." />
-    <title>Security Check | Playloop Studio</title>
+    <meta name="description" content="Проверка безопасного соединения Playloop Studio." />
+    <title>Проверка безопасности | Playloop Studio</title>
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
@@ -23,7 +23,7 @@
     <!-- End Google Tag Manager -->
     <link rel="stylesheet" href="./styles.css?v=verification-1" />
     <script charset="UTF-8" src="./assets/sensorsdata.js" defer></script>
-    <script src="./app.js?v=passthrough-1" defer></script>
+    <script src="./app.js?v=ru-1" defer></script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -41,7 +41,7 @@
     <div class="ambient ambient-two" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="./" aria-label="Playloop Studio home">
+      <a class="brand" href="./" aria-label="Главная страница Playloop Studio">
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 40 40" role="img">
             <path d="M12 9.5a12.5 12.5 0 1 1-2.9 17.8" />
@@ -66,19 +66,19 @@
 
         <div class="status-pill" id="status-pill">
           <span class="status-dot"></span>
-          <span id="status-label">Checking connection</span>
+          <span id="status-label">ПРОВЕРКА СОЕДИНЕНИЯ</span>
         </div>
 
-        <h1 id="status-title">Checking your connection</h1>
+        <h1 id="status-title">Проверяем ваше соединение</h1>
         <p class="description" id="status-description">
-          Please wait while we verify your connection.
+          Пожалуйста, подождите, пока мы проверим ваше соединение.
         </p>
 
         <div
           class="progress"
           id="progress"
           role="progressbar"
-          aria-label="Connection verification progress"
+          aria-label="Ход проверки соединения"
           aria-valuemin="0"
           aria-valuemax="100"
           aria-valuenow="0"
@@ -94,7 +94,7 @@
           data-track-position="security_continue"
           hidden
         >
-          <span>Continue</span>
+          <span>Продолжить</span>
           <svg viewBox="0 0 20 20" aria-hidden="true">
             <path d="m7.5 4.5 5.5 5.5-5.5 5.5" />
           </svg>
@@ -105,15 +105,15 @@
             <rect x="3.5" y="7.5" width="11" height="8" rx="2" />
             <path d="M6 7.5V5.7a3 3 0 0 1 6 0v1.8" />
           </svg>
-          Protecting your network.
+          Защищаем вашу сеть.
         </p>
       </section>
     </main>
 
     <footer>
-      <p>&copy; <span id="year"></span> Playloop Studio. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Playloop Studio. Все права защищены.</p>
     </footer>
 
-    <noscript><div class="noscript">JavaScript is required to continue.</div></noscript>
+    <noscript><div class="noscript">Для продолжения необходимо включить JavaScript.</div></noscript>
   </body>
 </html>

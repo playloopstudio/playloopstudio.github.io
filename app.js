@@ -138,15 +138,15 @@
 
     if (shield) shield.classList.add("complete");
     if (statusPill) statusPill.classList.add("complete");
-    if (statusLabel) statusLabel.textContent = "CONNECTION VERIFIED";
-    if (title) title.textContent = "Security check complete";
+    if (statusLabel) statusLabel.textContent = "СОЕДИНЕНИЕ ПОДТВЕРЖДЕНО";
+    if (title) title.textContent = "Проверка безопасности завершена";
     if (description) {
-      description.textContent = "Your browser is ready. Continue to Playloop Studio when you are ready.";
+      description.textContent = "Ваш браузер готов. Нажмите «Продолжить», чтобы перейти в Playloop Studio.";
     }
     if (progress) {
       progress.classList.add("complete");
       progress.setAttribute("aria-valuenow", "100");
-      progress.setAttribute("aria-label", "Connection verified");
+      progress.setAttribute("aria-label", "Соединение подтверждено");
     }
 
     if (!target || !targetUrl) return;
