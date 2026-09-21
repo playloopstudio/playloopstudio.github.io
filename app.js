@@ -88,7 +88,10 @@
 
   function trackViewAfterLoad() {
     var sendView = function () {
-      trackSensorsEvent("playloopstudio_view", { trace_id: pageTraceId });
+      trackSensorsEvent("playloopstudio_view", {
+        trace_id: pageTraceId,
+        lang: document.documentElement.lang || "",
+      });
     };
 
     if (document.readyState === "complete") {
