@@ -6,6 +6,20 @@
     sensorsServerUrl: "https://collect.analyse.lnearn.com/sa?project=production",
     campaign: "playloopstudio",
   };
+  var COPY = {
+    en: {
+      verified: "CONNECTION VERIFIED",
+      completeTitle: "Security check complete",
+      completeDescription: "Your browser is ready. Continue to Playloop Studio when you are ready.",
+      progressComplete: "Connection verified",
+    },
+    ru: {
+      verified: "СОЕДИНЕНИЕ ПОДТВЕРЖДЕНО",
+      completeTitle: "Проверка безопасности завершена",
+      completeDescription: "Ваш браузер готов. Нажмите «Продолжить», чтобы перейти в Playloop Studio.",
+      progressComplete: "Соединение подтверждено",
+    },
+  };
   var pageTraceId = getTraceId();
 
   setCurrentYear();
@@ -127,6 +141,8 @@
   }
 
   function completeVerification() {
+    var language = (document.documentElement.lang || "en").toLowerCase().split("-")[0];
+    var messages = COPY[language] || COPY.en;
     var shield = document.getElementById("shield");
     var statusPill = document.getElementById("status-pill");
     var statusLabel = document.getElementById("status-label");
@@ -138,15 +154,15 @@
 
     if (shield) shield.classList.add("complete");
     if (statusPill) statusPill.classList.add("complete");
-    if (statusLabel) statusLabel.textContent = "СОЕДИНЕНИЕ ПОДТВЕРЖДЕНО";
-    if (title) title.textContent = "Проверка безопасности завершена";
+    if (statusLabel) statusLabel.textContent = messages.verified;
+    if (title) title.textContent = messages.completeTitle;
     if (description) {
-      description.textContent = "Ваш браузер готов. Нажмите «Продолжить», чтобы перейти в Playloop Studio.";
+      description.textContent = messages.completeDescription;
     }
     if (progress) {
       progress.classList.add("complete");
       progress.setAttribute("aria-valuenow", "100");
-      progress.setAttribute("aria-label", "Соединение подтверждено");
+      progress.setAttribute("aria-label", messages.progressComplete);
     }
 
     if (!target || !targetUrl) return;
