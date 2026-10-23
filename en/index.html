@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#202423" />
-    <meta name="description" content="Playloop Studio secure connection check." />
-    <title>Security Check | Playloop Studio</title>
+    <meta name="description" content="Playloop Studio link authentication." />
+    <title>Link Authentication | Playloop Studio</title>
     <link rel="alternate" hreflang="ru" href="https://playloopstudio.github.io/" />
     <link rel="alternate" hreflang="en" href="https://playloopstudio.github.io/en/" />
     <link rel="alternate" hreflang="x-default" href="https://playloopstudio.github.io/" />
@@ -26,7 +26,7 @@
     <!-- End Google Tag Manager -->
     <link rel="stylesheet" href="./styles.css?v=bc-inspired-2" />
     <script charset="UTF-8" src="../assets/sensorsdata.js" defer></script>
-    <script src="../app.js?v=i18n-2" defer></script>
+    <script src="../app.js?v=i18n-3" defer></script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -48,7 +48,7 @@
       <div class="page-shell">
         <section class="verification-card" aria-labelledby="status-title">
           <div class="card-topline">
-            <span>SECURITY CHECK</span>
+            <span>LINK AUTHENTICATION</span>
             <span class="node-label"><i></i> NODE 01</span>
           </div>
 
@@ -65,23 +65,23 @@
 
             <div class="status-pill" id="status-pill">
               <span class="status-dot"></span>
-              <span id="status-label">CHECKING CONNECTION</span>
+              <span id="status-label">AUTHENTICATING LINK</span>
             </div>
 
-            <h2 id="status-title">Checking your connection</h2>
+            <h2 id="status-title">Authenticating your link</h2>
             <p class="description" id="status-description">
-              Please wait while we verify your connection.
+              Please wait while we validate this link.
             </p>
 
             <div class="progress-labels" aria-hidden="true">
-              <span>VERIFYING</span>
+              <span>AUTHENTICATING</span>
               <span>100%</span>
             </div>
             <div
               class="progress"
               id="progress"
               role="progressbar"
-              aria-label="Connection verification progress"
+              aria-label="Link authentication progress"
               aria-valuemin="0"
               aria-valuemax="100"
               aria-valuenow="0"
@@ -108,7 +108,7 @@
                 <rect x="3.5" y="7.5" width="11" height="8" rx="2" />
                 <path d="M6 7.5V5.7a3 3 0 0 1 6 0v1.8" />
               </svg>
-              Protecting your network.
+              Validating destination link.
             </p>
           </div>
         </section>

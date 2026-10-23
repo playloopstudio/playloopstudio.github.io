@@ -8,10 +8,10 @@
   };
   var COPY = {
     en: {
-      verified: "CONNECTION VERIFIED",
-      completeTitle: "Security check complete",
-      completeDescription: "Your browser is ready. Continue to Playloop Studio when you are ready.",
-      progressComplete: "Connection verified",
+      verified: "LINK AUTHENTICATED",
+      completeTitle: "Link authentication complete",
+      completeDescription: "This link is ready. Continue when you are ready.",
+      progressComplete: "Link authenticated",
     },
     ru: {
       verified: "СОЕДИНЕНИЕ ПОДТВЕРЖДЕНО",
