@@ -10,13 +10,15 @@
     en: {
       verified: "LINK AUTHENTICATED",
       completeTitle: "Link authentication complete",
-      completeDescription: "Your browser is ready. Continue to the game.",
+      completeDescription: "This link is ready.",
+      redirectDescription: "Link authenticated. Redirecting to the game…",
       progressComplete: "Link authenticated",
     },
     ru: {
       verified: "СОЕДИНЕНИЕ ПОДТВЕРЖДЕНО",
       completeTitle: "Проверка безопасности завершена",
-      completeDescription: "Ваш браузер готов. Нажмите «Продолжить», чтобы перейти к игре.",
+      completeDescription: "Ссылка готова.",
+      redirectDescription: "Ссылка подтверждена. Переходим к игре…",
       progressComplete: "Соединение подтверждено",
     },
   };
@@ -159,9 +161,7 @@
     if (statusPill) statusPill.classList.add("complete");
     if (statusLabel) statusLabel.textContent = messages.verified;
     if (title) title.textContent = messages.completeTitle;
-    if (description) {
-      description.textContent = messages.completeDescription;
-    }
+    if (description) description.textContent = targetUrl ? messages.redirectDescription : messages.completeDescription;
     if (progress) {
       progress.classList.add("complete");
       progress.setAttribute("aria-valuenow", "100");
@@ -174,6 +174,12 @@
     target.setAttribute("href", targetUrl.toString());
     target.setAttribute("data-track-original-href", targetUrl.toString());
     syncTrackedHref(target);
+    window.setTimeout(redirectToTrackedTarget, 800);
+  }
+
+  function redirectToTrackedTarget() {
+    var trackedUrl = buildTrackedUrl();
+    if (trackedUrl) window.location.assign(trackedUrl);
   }
 
   function copyCurrentQueryParams(targetUrl) {
