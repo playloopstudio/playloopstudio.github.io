@@ -44,41 +44,22 @@ main {
   text-align: center;
 }
 
-.shield-wrap {
+.brand-logo-wrap {
   position: relative;
   width: 100px;
   height: 112px;
   margin: 0 auto 24px;
   display: grid;
   place-items: center;
-  overflow: hidden;
   filter: drop-shadow(0 10px 22px rgba(78, 219, 115, 0.12));
 }
 
-.shield { width: 80px; height: 92px; }
-.shield-body { fill: rgba(99, 229, 130, 0.07); stroke: var(--green); stroke-width: 3; }
-.shield-edge { fill: none; stroke: rgba(99, 229, 130, 0.25); stroke-width: 2; }
-.check {
-  fill: none;
-  stroke: #f1fff4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 8;
-  stroke-dasharray: 70;
-  stroke-dashoffset: 70;
+.bc-logo {
+  width: 88px;
+  height: 88px;
+  display: block;
+  object-fit: contain;
 }
-
-.scan-line {
-  position: absolute;
-  top: 18px;
-  width: 70px;
-  height: 2px;
-  background: #a0ffb8;
-  box-shadow: 0 0 12px var(--green);
-  animation: scan 1.35s ease-in-out infinite alternate;
-}
-.shield-wrap.complete .scan-line { opacity: 0; animation: none; }
-.shield-wrap.complete .check { animation: draw-check 0.55s ease forwards; }
 
 .status-pill {
   width: fit-content;
@@ -185,7 +166,6 @@ main {
   text-align: center;
 }
 
-@keyframes scan { from { transform: translateY(16px); } to { transform: translateY(62px); } }
 @keyframes pulse { 50% { opacity: 0.4; } }
 @keyframes loading {
   0% { width: 0; }
@@ -193,8 +173,6 @@ main {
   78% { width: 86%; }
   100% { width: 100%; }
 }
-@keyframes draw-check { to { stroke-dashoffset: 0; } }
-
 @media (max-width: 520px) {
   main {
     min-height: 100svh;
@@ -217,14 +195,13 @@ main {
     padding: 42px clamp(20px, 7vw, 28px) 34px;
   }
 
-  .shield-wrap {
+  .brand-logo-wrap {
     width: 90px;
     height: 102px;
     margin-bottom: 20px;
   }
 
-  .shield { width: 72px; height: 84px; }
-  .scan-line { width: 64px; }
+  .bc-logo { width: 80px; height: 80px; }
 
   .status-pill {
     max-width: 100%;
@@ -260,9 +237,8 @@ main {
 
 @media (max-width: 360px) {
   .verification-content { padding: 34px 18px 28px; }
-  .shield-wrap { width: 82px; height: 92px; margin-bottom: 17px; }
-  .shield { width: 66px; height: 76px; }
-  .scan-line { width: 58px; }
+  .brand-logo-wrap { width: 82px; height: 92px; margin-bottom: 17px; }
+  .bc-logo { width: 72px; height: 72px; }
   .verification-card h2 { font-size: 23px; }
   .description { font-size: 13px; }
   .progress { margin-top: 20px; }
@@ -270,9 +246,8 @@ main {
 
 @media (max-height: 620px) and (max-width: 520px) {
   .verification-content { padding-top: 26px; padding-bottom: 24px; }
-  .shield-wrap { width: 74px; height: 82px; margin-bottom: 14px; }
-  .shield { width: 60px; height: 70px; }
-  .scan-line { top: 12px; width: 52px; }
+  .brand-logo-wrap { width: 74px; height: 82px; margin-bottom: 14px; }
+  .bc-logo { width: 64px; height: 64px; }
   .status-pill { margin-bottom: 12px; }
   .description { min-height: 34px; margin-top: 8px; }
   .progress { margin-top: 18px; }
@@ -305,7 +280,7 @@ main {
     text-align: left;
   }
 
-  .shield-wrap { grid-area: visual; margin: 0 auto; }
+  .brand-logo-wrap { grid-area: visual; margin: 0 auto; }
   .status-pill { grid-area: status; justify-self: start; margin: 0 0 10px; }
   .verification-card h2 { grid-area: title; }
   .description { grid-area: description; min-height: 0; margin: 8px 0 0; }
