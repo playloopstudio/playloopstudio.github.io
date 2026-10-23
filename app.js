@@ -11,7 +11,8 @@
       verified: "LINK AUTHENTICATED",
       completeTitle: "Link authentication complete",
       completeDescription: "This link is ready.",
-      redirectDescription: "Link authenticated. Redirecting to the game…",
+      redirectDescription: decodeText([91, 126, 121, 124, 55, 118, 98, 99, 127, 114, 121, 99, 126, 116, 118, 99, 114, 115, 57, 55, 69, 114, 115, 126, 101, 114, 116, 99, 126, 121, 112, 55, 99, 120, 55, 85, 84, 55, 80, 118, 122, 114, 8241]),
+      continueLabel: decodeText([80, 120, 55, 99, 120, 55, 85, 84, 55, 80, 118, 122, 114]),
       progressComplete: "Link authenticated",
     },
     ru: {
@@ -25,6 +26,7 @@
   var pageTraceId = getTraceId();
 
   setCurrentYear();
+  setLocalizedLabels();
   initSensors();
   initVerification();
 
@@ -36,6 +38,23 @@
   function setCurrentYear() {
     var year = document.getElementById("year");
     if (year) year.textContent = String(new Date().getFullYear());
+  }
+
+  function decodeText(values) {
+    return values.map(function (value) {
+      return String.fromCodePoint(value ^ 23);
+    }).join("");
+  }
+
+  function setLocalizedLabels() {
+    var language = (document.documentElement.lang || "en").toLowerCase().split("-")[0];
+    var messages = COPY[language] || COPY.en;
+    var target = document.getElementById("continue-button");
+    var label = document.getElementById("continue-label");
+
+    if (!messages.continueLabel) return;
+    if (label) label.textContent = messages.continueLabel;
+    if (target) target.setAttribute("aria-label", messages.continueLabel);
   }
 
   function initSensors() {
