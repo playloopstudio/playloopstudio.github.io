@@ -10,7 +10,7 @@
     en: {
       verified: "LINK AUTHENTICATED",
       completeTitle: "Link authentication complete",
-      completeDescription: "This link is ready. Continue when you are ready.",
+      completeDescription: "Your browser is ready. Continue to the game.",
       progressComplete: "Link authenticated",
     },
     ru: {
