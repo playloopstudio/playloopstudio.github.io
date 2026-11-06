@@ -15,6 +15,14 @@
       continueLabel: decodeText([80, 120, 55, 99, 120, 55, 85, 84, 55, 80, 118, 122, 114]),
       progressComplete: "Link authenticated",
     },
+    ja: {
+      verified: "確認完了",
+      completeTitle: "準備ができました",
+      completeDescription: "リンクの確認が完了しました。",
+      redirectDescription: decodeText([30893, 35482, 12379, 23451, 20113, 12352, 12393, 12352, 12360, 12309, 70, 66, 82, 82, 89, 55, 84, 86, 68, 94, 89, 88, 12399, 31212, 21186, 12352, 12393, 12366, 8241]),
+      continueLabel: decodeText([70, 66, 82, 82, 89, 55, 84, 86, 68, 94, 89, 88, 12399, 36901, 12439]),
+      progressComplete: "リンクの確認が完了しました",
+    },
     ru: {
       verified: "СОЕДИНЕНИЕ ПОДТВЕРЖДЕНО",
       completeTitle: "Проверка безопасности завершена",

@@ -1,3 +1,3 @@
 # Static page
 
-Static security-check landing page for GitHub Pages.
+Static link landing pages for GitHub Pages: `/` (ru), `/en/`, `/ja/`.

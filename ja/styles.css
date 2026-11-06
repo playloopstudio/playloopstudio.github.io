@@ -1,0 +1,141 @@
+:root {
+  color: #fff;
+  background: #232626;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  --accent: #cc004a;
+  --line: rgba(255, 255, 255, 0.08);
+  --muted: #b4baba;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(204, 0, 74, 0.07), transparent 52%),
+    #232626;
+}
+
+.page-shell {
+  max-width: 500px;
+  border-radius: 12px;
+  background: #292d2e;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.22);
+}
+
+.verification-content { padding: 48px 42px 40px; }
+
+.brand-logo-wrap {
+  width: min(100%, 252px);
+  height: 64px;
+  margin-bottom: 32px;
+  filter: none;
+}
+
+.queen-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.status-pill {
+  margin-bottom: 20px;
+  padding: 7px 12px;
+  border-color: rgba(234, 72, 131, 0.25);
+  border-radius: 6px;
+  color: #ff9cbe;
+  background: rgba(204, 0, 74, 0.1);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.status-dot {
+  flex-shrink: 0;
+  background: #ed3b7b;
+  box-shadow: 0 0 0 4px rgba(237, 59, 123, 0.12);
+}
+
+.verification-card h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(22px, 4vw, 27px);
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.description {
+  min-height: 50px;
+  max-width: 340px;
+  margin-top: 12px;
+  line-height: 1.9;
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
+.progress {
+  margin-top: 26px;
+  height: 4px;
+  background: #3b3f40;
+}
+
+.progress span {
+  background: linear-gradient(90deg, #cc004a, #ee4f8a);
+  box-shadow: 0 0 12px rgba(204, 0, 74, 0.2);
+}
+
+.continue-button {
+  border-radius: 8px;
+  color: #fff;
+  background: var(--accent);
+  box-shadow: 0 8px 20px rgba(204, 0, 74, 0.12);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+}
+
+.continue-button:hover { background: #df145e; }
+.continue-button:focus-visible { outline-color: rgba(238, 79, 138, 0.5); }
+.continue-button:active { transform: translateY(0); background: #b90043; }
+
+@media (max-width: 520px) {
+  .page-shell { max-width: 420px; }
+  .verification-content { padding: 38px clamp(20px, 6vw, 28px) 32px; }
+  .brand-logo-wrap { width: min(100%, 230px); height: 58px; margin-bottom: 28px; }
+  .verification-card h1 { font-size: clamp(21px, 5.8vw, 25px); }
+  .status-pill { margin-bottom: 16px; }
+  .description { font-size: 13px; }
+}
+
+@media (max-width: 360px) {
+  .verification-content { padding: 30px 20px 26px; }
+  .brand-logo-wrap { width: 210px; height: 52px; margin-bottom: 24px; }
+  .verification-card h1 { font-size: 20px; }
+}
+
+@media (max-height: 620px) and (max-width: 520px) {
+  .verification-content { padding-top: 26px; padding-bottom: 24px; }
+  .brand-logo-wrap { width: 200px; height: 46px; margin-bottom: 20px; }
+  .status-pill { margin-bottom: 12px; }
+  .description { min-height: 38px; margin-top: 8px; }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .page-shell { max-width: 720px; }
+  .verification-content {
+    grid-template-columns: 175px minmax(0, 1fr);
+    grid-template-areas:
+      "visual status"
+      "visual copy"
+      "visual progress"
+      "visual button";
+    column-gap: 26px;
+    padding: 24px;
+  }
+  .brand-logo-wrap { width: 175px; height: 48px; margin: 0; }
+  .status-copy { grid-area: copy; }
+  .verification-card h1 { font-size: 22px; }
+  .description { min-height: 0; }
+}
