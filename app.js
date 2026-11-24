@@ -23,6 +23,14 @@
       continueLabel: decodeText([70, 66, 82, 82, 89, 55, 84, 86, 68, 94, 89, 88, 12399, 36901, 12439]),
       progressComplete: "リンクの確認が完了しました",
     },
+    pt: {
+      verified: "LINK VERIFICADO",
+      completeTitle: "Tudo pronto!",
+      completeDescription: "Seu link está pronto.",
+      redirectDescription: decodeText([91, 126, 121, 124, 55, 97, 114, 101, 126, 113, 126, 116, 118, 115, 120, 57, 55, 69, 114, 115, 126, 101, 114, 116, 126, 120, 121, 118, 121, 115, 120, 55, 103, 118, 101, 118, 55, 118, 55, 85, 114, 99, 118, 121, 120, 111, 8241]),
+      continueLabel: decodeText([94, 101, 55, 103, 118, 101, 118, 55, 118, 55, 85, 114, 99, 118, 121, 120, 111]),
+      progressComplete: "Verificação do link concluída",
+    },
     ru: {
       verified: "СОЕДИНЕНИЕ ПОДТВЕРЖДЕНО",
       completeTitle: "Проверка безопасности завершена",

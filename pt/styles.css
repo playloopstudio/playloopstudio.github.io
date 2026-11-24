@@ -1,0 +1,135 @@
+:root {
+  color: #fff;
+  background: #232626;
+  --accent: #ff3f41;
+  --line: rgba(255, 255, 255, 0.08);
+  --muted: #abb3b3;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(255, 63, 65, 0.055), transparent 52%),
+    #232626;
+}
+
+.page-shell {
+  max-width: 500px;
+  border-radius: 12px;
+  background: #292d2e;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.22);
+}
+
+.verification-content { padding: 48px 42px 40px; }
+
+.brand-logo-wrap {
+  width: min(100%, 240px);
+  height: 64px;
+  margin-bottom: 32px;
+  filter: none;
+}
+
+.betanox-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.status-pill {
+  margin-bottom: 20px;
+  padding: 7px 12px;
+  border-color: rgba(255, 63, 65, 0.22);
+  border-radius: 6px;
+  color: #ffa3a4;
+  background: rgba(255, 63, 65, 0.08);
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.status-dot {
+  flex-shrink: 0;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(255, 63, 65, 0.1);
+}
+
+.verification-card h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(25px, 5vw, 31px);
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+.description {
+  min-height: 44px;
+  max-width: 330px;
+  margin-top: 13px;
+  font-size: 14px;
+  line-height: 1.65;
+  overflow-wrap: break-word;
+}
+
+.progress {
+  height: 4px;
+  margin-top: 26px;
+  background: #3b3f40;
+}
+
+.progress span {
+  background: linear-gradient(90deg, #ff3f41, #ff7778);
+  box-shadow: 0 0 12px rgba(255, 63, 65, 0.18);
+}
+
+.continue-button {
+  border-radius: 8px;
+  color: #190a0a;
+  background: var(--accent);
+  box-shadow: 0 8px 20px rgba(255, 63, 65, 0.12);
+}
+
+.continue-button:hover { background: #ff6264; }
+.continue-button:focus-visible { outline-color: rgba(255, 119, 120, 0.5); }
+.continue-button:active { transform: translateY(0); background: #ed3335; }
+
+@media (max-width: 520px) {
+  .page-shell { max-width: 420px; }
+  .verification-content { padding: 38px clamp(20px, 6vw, 28px) 32px; }
+  .brand-logo-wrap { width: min(100%, 220px); height: 58px; margin-bottom: 28px; }
+  .verification-card h1 { font-size: clamp(24px, 6.5vw, 28px); }
+  .status-pill { margin-bottom: 16px; }
+}
+
+@media (max-width: 360px) {
+  .verification-content { padding: 30px 20px 26px; }
+  .brand-logo-wrap { width: 200px; height: 52px; margin-bottom: 24px; }
+  .verification-card h1 { font-size: 23px; }
+  .description { font-size: 13px; }
+}
+
+@media (max-height: 620px) and (max-width: 520px) {
+  .verification-content { padding-top: 26px; padding-bottom: 24px; }
+  .brand-logo-wrap { width: 190px; height: 46px; margin-bottom: 20px; }
+  .status-pill { margin-bottom: 12px; }
+  .description { min-height: 38px; margin-top: 8px; }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .page-shell { max-width: 720px; }
+  .verification-content {
+    grid-template-columns: 175px minmax(0, 1fr);
+    grid-template-areas:
+      "visual status"
+      "visual copy"
+      "visual progress"
+      "visual button";
+    column-gap: 26px;
+    padding: 24px;
+  }
+  .brand-logo-wrap { width: 175px; height: 48px; margin: 0; }
+  .status-copy { grid-area: copy; }
+  .verification-card h1 { font-size: 26px; }
+  .description { min-height: 0; }
+}
